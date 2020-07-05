@@ -23,7 +23,7 @@ public class BlobTest {
 	public void testInsert() throws Exception {
 		Connection conn = JDBCUtils.getConnection();
 		String sql="insert into customers(name,email,birth,photo)values(?,?,?,?)";
-		System.out.println();
+		System.out.println("hahaha");
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setObject(1, "¹þ¹þ");
 		ps.setObject(2, "163@aqq");
