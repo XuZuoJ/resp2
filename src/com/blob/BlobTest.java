@@ -23,9 +23,8 @@ public class BlobTest {
 	public void testInsert() throws Exception {
 		Connection conn = JDBCUtils.getConnection();
 		String sql="insert into customers(name,email,birth,photo)values(?,?,?,?)";
-		System.out.println("hahaha");
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setObject(1, "¹ş¹ş");
+		ps.setObject(1, "Â¹Ã¾Â¹Ã¾");
 		ps.setObject(2, "163@aqq");
 		ps.setObject(3, "1992-09-08");
 		FileInputStream is = new FileInputStream(new File("onepiece.jpg"));
@@ -56,7 +55,7 @@ public class BlobTest {
 				Customer cust =new Customer(id,name,email,birth);
 				System.out.println(cust);
 				Blob photo = rs.getBlob("photo");
-				//½«Í¼Æ¬ÏÂÔØÏÂÀ´
+				//Â½Â«ÃÂ¼Ã†Â¬ÃÃ‚Ã”Ã˜ÃÃ‚Ã€Â´
 				is = photo.getBinaryStream();
 				fos = new FileOutputStream(new File("C:\\Users\\Administrator\\Desktop\\beijing.jpg"));
 				byte[] bytes=new byte[1024];
